@@ -38,7 +38,6 @@
         screenshotButton.className = 'ytp-button ytp-screenshot-button';
         screenshotButton.setAttribute('title', 'Take screenshot');
         screenshotButton.style.position = 'relative';
-        screenshotButton.style.bottom = '12px';
         screenshotButton.style.width = '44px';
 
         const svgElement = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
