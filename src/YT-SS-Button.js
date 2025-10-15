@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name            YouTube Screenshot Button
 // @namespace       https://criskkky.carrd.co/
-// @version         1.0.1
+// @version         1.0.2
 // @description     Adds a button to take a screenshot of the current video frame on YouTube.
 // @description:es  Añade un botón para tomar una captura de pantalla del fotograma actual del vídeo en YouTube.
 // @description:pt  Adiciona um botão para tirar uma captura de tela do fotograma atual do vídeo no YouTube.
