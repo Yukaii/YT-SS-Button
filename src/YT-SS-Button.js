@@ -75,6 +75,7 @@
         link.click();
     }
 
+    /* Not needed anymore, for now at least.
     function handleFullscreenChange() {
         const screenshotButton = document.querySelector('.ytp-screenshot-button');
         if (screenshotButton) {
@@ -82,6 +83,7 @@
             screenshotButton.style.bottom = isFullscreen ? '15px' : '12px';
         }
     }
+    */
 
     function initialize() {
         document.addEventListener('yt-navigate-finish', () => {
@@ -90,7 +92,7 @@
             }
         });
 
-        document.addEventListener('fullscreenchange', handleFullscreenChange);
+        // document.addEventListener('fullscreenchange', handleFullscreenChange);
 
         // Initial setup
         if (window.location.href.includes('watch?v=')) {
