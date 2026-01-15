@@ -97,8 +97,27 @@
         windowFullscreenEnabled = !windowFullscreenEnabled;
 
         if (windowFullscreenEnabled) {
-            ytdApp.setAttribute('data-window-fullscreen', 'true');
-            injectWindowFullscreenCSS();
+            // Enable theater mode first if not already enabled
+            const watchFlexy = document.querySelector('ytd-watch-flexy');
+            const isTheaterMode = watchFlexy && watchFlexy.hasAttribute('theater');
+
+            if (!isTheaterMode) {
+                const sizeButton = document.querySelector('.ytp-size-button');
+                if (sizeButton) {
+                    sizeButton.click();
+                    // Give theater mode time to activate before applying window fullscreen
+                    setTimeout(() => {
+                        ytdApp.setAttribute('data-window-fullscreen', 'true');
+                        injectWindowFullscreenCSS();
+                    }, 200);
+                } else {
+                    ytdApp.setAttribute('data-window-fullscreen', 'true');
+                    injectWindowFullscreenCSS();
+                }
+            } else {
+                ytdApp.setAttribute('data-window-fullscreen', 'true');
+                injectWindowFullscreenCSS();
+            }
         } else {
             ytdApp.removeAttribute('data-window-fullscreen');
         }
@@ -287,7 +306,7 @@
         if (window.location.href.includes('watch?v=')) {
             setTimeout(() => {
                 addPlayerButtons();
-                restoreFullscreenState();
+                restoreWindowFullscreenState();
             }, 500);
         }
 
